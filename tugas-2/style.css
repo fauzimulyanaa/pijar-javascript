@@ -1,0 +1,30 @@
+.container {
+  width: 90%;
+  margin: 100px auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+.desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+  margin-top: 60px;
+  font-size: 1.5rem;
+}
+
+.nilai-input {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 30px;
+}
