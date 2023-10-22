@@ -14,7 +14,7 @@ let data = {
 };
 
 /*
-soal a
+soal a  
 Ubahlah data tersebut menggunakan spread operator menjadi:
 name: nama anda
 email: email anda

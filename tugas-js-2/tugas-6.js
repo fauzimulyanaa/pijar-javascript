@@ -24,4 +24,4 @@ function tampilkanHasil(results) {
   }
 }
 
-searchName("ol", 5, tampilkanHasil);
+searchName("ol", 3, tampilkanHasil);

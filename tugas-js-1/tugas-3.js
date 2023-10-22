@@ -3,13 +3,13 @@ const printSegitiga = (num) => {
     console.log("Parameter harus angka!");
   } else {
     for (let i = num; i >= 1; i--) {
-      let a = "";
+      let cetakBaris = "";
       for (let j = 1; j <= i; j++) {
-        a += j;
+        cetakBaris += j;
       }
-      console.log(a);
+      console.log(cetakBaris);
     }
   }
 };
 
-printSegitiga(9);
+printSegitiga(NaN);

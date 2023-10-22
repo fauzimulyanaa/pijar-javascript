@@ -17,20 +17,37 @@ const result = document.querySelector("#rata-rata");
 const grade = document.querySelector("#grade");
 const tampilNilai = document.querySelector(".tampilNilai");
 
-cekBtn.addEventListener("click", () => {
+function cekRataRata(nilaiUn) {
+  if (arr.length === 0) {
+    return null;
+  }
   let rataRata = arr.reduce((nilaiAwal, item) => nilaiAwal + item) / arr.length;
-  result.innerHTML = rataRata;
-  tampilNilai.innerHTML = arr.join(", ");
 
-  if (rataRata >= 90) {
+  return Math.round(rataRata);
+}
+
+function cekGrade(nilai) {
+  if (nilai >= 90) {
     grade.innerHTML = "A";
-  } else if (rataRata >= 80) {
+  } else if (nilai >= 80) {
     grade.innerHTML = "B";
-  } else if (rataRata >= 70) {
+  } else if (nilai >= 70) {
     grade.innerHTML = "C";
-  } else if (rataRata >= 60) {
+  } else if (nilai >= 60) {
     grade.innerHTML = "D";
   } else {
     grade.innerHTML = "E";
   }
+}
+
+cekBtn.addEventListener("click", () => {
+  if (arr.length === 0) {
+    alert("Anda harus menginputkan nilai terlebih dahulu");
+    return;
+  }
+  let nilai = cekRataRata(arr);
+  result.innerHTML = nilai;
+  tampilNilai.innerHTML = arr.join(", ");
+
+  cekGrade(nilai);
 });
