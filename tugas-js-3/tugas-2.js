@@ -1,6 +1,6 @@
 const getMonth = (callback) => {
   setTimeout(() => {
-    let error = false;
+    let error = true;
     let month = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
     if (!error) {
       callback(null, month);
@@ -11,10 +11,10 @@ const getMonth = (callback) => {
 };
 const cekBulan = (err, month) => {
   if (err) {
-    console.error(err);
+    console.error(err.message);
   } else {
-    const result = month.map((item) => {
-      console.log(`Month : ${item}`);
+    const result = month.map((item, index) => {
+      console.log(`${index + 1}: ${item}`);
     });
   }
 };
