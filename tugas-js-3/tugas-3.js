@@ -11,7 +11,7 @@ function pesanTiketKonser(jumlahTiket) {
   });
 }
 
-pesanTiketKonser(5)
+pesanTiketKonser(70)
   .then((result) => {
     console.log(result);
   })
@@ -19,27 +19,26 @@ pesanTiketKonser(5)
     console.error(error);
   });
 
-function pesanKopi(jenisKopi) {
+function mahasiswaTerdaftar(cekMahasiswa) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const menuKopi = {
-        Americano: 5,
-        Latte: 7,
-        Espresso: 3,
-      };
-      if (menuKopi[jenisKopi] > 0) {
-        resolve(`Pemesanan ${jenisKopi} berhasil.`);
+      const mahasiswa = ["budi", "Jono", "Asep", "Dadang"];
+      let cek = mahasiswa.find((item) => {
+        return item === cekMahasiswa;
+      });
+      if (cek) {
+        resolve(`Mahasiswa ada terdaftar ${cek}`);
       } else {
-        reject(`Maaf, ${jenisKopi} tidak tersedia saat ini.`);
+        reject(new Error("mahasiswa tidak terdaftar"));
       }
     }, 2000);
   });
 }
 
-pesanKopi("Kapal api")
+mahasiswaTerdaftar("dudung")
   .then((result) => {
     console.log(result);
   })
   .catch((error) => {
-    console.error(error);
+    console.error(error.message);
   });
